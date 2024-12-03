@@ -19,27 +19,36 @@
 
     /* Happy Krampus Image */
     #krampus {
-      position: relative;
-      top: 50%; /* Centered vertically */
+      position: absolute;
+      top: 5%; /* Adjust placement above the title */
       left: 50%;
-      transform: translate(-50%, -50%); /* Adjust to keep it centered */
-      width: 200px; /* Adjusted size */
+      transform: translateX(-50%);
+      width: 200px;
       height: auto;
       z-index: 2;
+      animation: swing 2s infinite ease-in-out;
     }
 
-    #krampus img {
-      width: 100%;
-      height: auto;
+    /* Swing and Nudge Animation */
+    @keyframes swing {
+      0% {
+        transform: translateX(-50%) rotate(-5deg);
+      }
+      50% {
+        transform: translateX(-50%) rotate(5deg);
+      }
+      100% {
+        transform: translateX(-50%) rotate(-5deg);
+      }
     }
 
     /* Title */
     #title {
       font-size: 3rem;
-      margin-top: 200px; /* Adjusted for better spacing */
+      margin-top: 200px;
       color: #f7d794;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-      z-index: 3; /* Title above Krampus image */
+      z-index: 3;
     }
 
     /* CA Text Box */
