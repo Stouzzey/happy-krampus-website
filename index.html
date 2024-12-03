@@ -20,31 +20,17 @@
     /* Happy Krampus Image */
     #krampus {
       position: relative;
-      top: 30%;
+      top: 30%; /* Moved up slightly more */
       left: 50%;
       transform: translate(-50%, -50%);
       width: 200px;
       height: auto;
       z-index: 2;
-      cursor: pointer;
     }
 
     #krampus img {
       width: 100%;
       height: auto;
-    }
-
-    /* Swing Animation */
-    @keyframes swing {
-      0% {
-        transform: translate(-50%, -50%) rotate(-5deg);
-      }
-      50% {
-        transform: translate(-50%, -50%) rotate(5deg);
-      }
-      100% {
-        transform: translate(-50%, -50%) rotate(-5deg);
-      }
     }
 
     /* Title */
@@ -71,7 +57,7 @@
       color: white;
       border-radius: 5px;
       cursor: not-allowed;
-      pointer-events: none;
+      pointer-events: none; /* Prevent typing */
     }
 
     input[type="text"]:focus {
@@ -102,7 +88,7 @@
 <body>
 
   <!-- Happy Krampus Image -->
-  <div id="krampus" onclick="krampusAction()">
+  <div id="krampus">
     <img src="images/happy-krampus.jpg" alt="Happy Krampus">
   </div>
 
@@ -127,25 +113,6 @@
       navigator.clipboard.writeText(ca.value).then(() => {
         alert('CA copied to clipboard!');
       });
-    }
-
-    // Function to make Krampus take a sip
-    function krampusAction() {
-      const krampus = document.getElementById('krampus');
-      const img = krampus.querySelector('img');
-      
-      // Animate the swaying effect
-      img.style.animation = 'swing 2s infinite ease-in-out';
-
-      // Simulate the "sip" action (you can replace with any action or image change)
-      setTimeout(() => {
-        img.src = "images/happy-krampus-sipping.jpg"; // Assuming you have an image of Krampus sipping.
-      }, 500);
-      
-      // Reset the image after some time
-      setTimeout(() => {
-        img.src = "images/happy-krampus.jpg"; // Return to the normal image after the sip.
-      }, 1500);
     }
   </script>
 
