@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Krampus</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+      background: url('images/snowy-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Happy Krampus Image */
+    #krampus {
+      position: absolute;
+      top: 5%; /* Adjust placement above the title */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px; /* Adjusted size */
+      height: auto;
+      z-index: 2;
+    }
+
+    #krampus img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Title */
+    #title {
+      font-size: 3rem;
+      margin-top: 250px; /* Adjusted for better spacing */
+      color: #f7d794;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    /* CA Text Box */
+    #ca-container {
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 1.2rem;
+      text-align: center;
+      border: 2px solid #f7d794;
+      background-color: #2c3e50;
+      color: white;
+      border-radius: 5px;
+      cursor: not-allowed;
+      pointer-events: none; /* Prevent typing */
+    }
+
+    input[type="text"]:focus {
+      outline: none;
+    }
+
+    /* Copy Button */
+    #copy-button-container {
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: #f7d794;
+      color: #2c3e50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3498db;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Happy Krampus Image -->
+  <div id="krampus">
+    <img src="images/happy-krampus.jpg" alt="Happy Krampus">
+  </div>
+
+  <!-- Title -->
+  <h1 id="title">Happy Krampus</h1>
+
+  <!-- CA Text Box -->
+  <div id="ca-container">
+    <input type="text" id="ca" value="your-ca-here" readonly>
+  </div>
+
+  <!-- Copy Button -->
+  <div id="copy-button-container">
+    <button onclick="copyCA()">Copy CA</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Function to Copy CA
+    function copyCA() {
+      const ca = document.getElementById('ca');
+      navigator.clipboard.writeText(ca.value).then(() => {
+        alert('CA copied to clipboard!');
+      });
+    }
+  </script>
+
+</body>
+</html>
