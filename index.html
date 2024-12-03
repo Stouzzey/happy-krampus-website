@@ -19,10 +19,10 @@
 
     /* Happy Krampus Image */
     #krampus {
-      position: absolute;
-      top: 5%; /* Adjust placement above the title */
+      position: relative;
+      top: 50%; /* Centered vertically */
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%); /* Adjust to keep it centered */
       width: 200px; /* Adjusted size */
       height: auto;
       z-index: 2;
@@ -36,9 +36,10 @@
     /* Title */
     #title {
       font-size: 3rem;
-      margin-top: 250px; /* Adjusted for better spacing */
+      margin-top: 200px; /* Adjusted for better spacing */
       color: #f7d794;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+      z-index: 3; /* Title above Krampus image */
     }
 
     /* CA Text Box */
